@@ -11,4 +11,5 @@ with open("input") as file:
     pos = (0, 0)
     for step in child_steps:
         pos = move[step](pos)
-    print(max(abs(pos[0]), abs(pos[1])))
+    distance = abs(pos[0] + pos[1]) if pos[0] ^ pos[1] >= 0 else max(abs(pos[0]), abs(pos[1]))
+    print(distance)
